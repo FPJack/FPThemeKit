@@ -1,0 +1,27 @@
+PODS:
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - FPThemeKit (0.1.0)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - FPThemeKit (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - FBSnapshotTestCase
+
+EXTERNAL SOURCES:
+  FPThemeKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  FPThemeKit: 16cfc9671fe1a988753246018b5ac6ca451ec1ab
+
+PODFILE CHECKSUM: b88a525cf3cf7f5ae9835c8dedc97e9bc3aefbea
+
+COCOAPODS: 1.16.2

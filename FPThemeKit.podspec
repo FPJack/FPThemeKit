@@ -21,15 +21,23 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/fanpeng/FPThemeKit'
+  s.homepage         = 'https://github.com/FPJack/FPThemeKit.git'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'fanpeng' => 'peng.fan@ukelink.com' }
-  s.source           = { :git => 'https://github.com/fanpeng/FPThemeKit.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/FPJack/FPThemeKit.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '10.0'
-
+   s.pod_target_xcconfig = {
+       'VALID_ARCHS' => 'arm64 arm64e x86_64',
+       'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
+     }
+     
+     s.user_target_xcconfig = {
+       'VALID_ARCHS' => 'arm64 arm64e x86_64',
+       'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
+     }
   s.source_files = 'FPThemeKit/Classes/**/*'
   
   # s.resource_bundles = {

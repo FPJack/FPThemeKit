@@ -1,0 +1,6 @@
+framework module FPThemeKit {
+  umbrella header "FPThemeKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

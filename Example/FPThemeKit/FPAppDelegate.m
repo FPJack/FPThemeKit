@@ -7,7 +7,7 @@
 //
 
 #import "FPAppDelegate.h"
-
+#import <FPThemeKit/FPThemeKit.h>
 @implementation FPAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
