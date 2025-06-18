@@ -14,7 +14,6 @@
 		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
 		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
 		6003F59E195388D20070C39A /* FPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* FPAppDelegate.m */; };
-		6003F5A7195388D20070C39A /* FPViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* FPViewController.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
@@ -23,7 +22,18 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		7E277CEDE96D4C78C7676FF3 /* Pods_FPThemeKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19FB8734E9AB35C7A160A1F4 /* Pods_FPThemeKit_Tests.framework */; };
-		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		84919F742E02B9B50086C5B3 /* TableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84919F6E2E02B9B50086C5B3 /* TableCell.m */; };
+		84919F752E02B9B50086C5B3 /* GMViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84919F6A2E02B9B50086C5B3 /* GMViewControllerTest.swift */; };
+		84919F762E02B9B50086C5B3 /* TestVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 84919F692E02B9B50086C5B3 /* TestVC.m */; };
+		84919F772E02B9B50086C5B3 /* GMAlphaTable.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84919F712E02B9B50086C5B3 /* GMAlphaTable.txt */; };
+		84919F782E02B9B50086C5B3 /* GMColorTable.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84919F702E02B9B50086C5B3 /* GMColorTable.txt */; };
+		84919F792E02B9B50086C5B3 /* GMViewControllerTest.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84919F6B2E02B9B50086C5B3 /* GMViewControllerTest.xib */; };
+		84919F7A2E02B9B50086C5B3 /* GMImageTable.txt in Resources */ = {isa = PBXBuildFile; fileRef = 84919F722E02B9B50086C5B3 /* GMImageTable.txt */; };
+		84919F7B2E02B9B50086C5B3 /* TableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84919F6F2E02B9B50086C5B3 /* TableCell.xib */; };
+		84919F7C2E02B9B50086C5B3 /* Configure.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84919F732E02B9B50086C5B3 /* Configure.plist */; };
+		84919F7D2E02B9B50086C5B3 /* TestVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84919F6C2E02B9B50086C5B3 /* TestVC.xib */; };
+		84919F812E02BA610086C5B3 /* GMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84919F802E02BA610086C5B3 /* GMViewController.m */; };
+		84919F822E02BA610086C5B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84919F7E2E02BA610086C5B3 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,8 +60,6 @@
 		6003F59B195388D20070C39A /* FPThemeKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FPThemeKit-Prefix.pch"; sourceTree = "<group>"; };
 		6003F59C195388D20070C39A /* FPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FPAppDelegate.h; sourceTree = "<group>"; };
 		6003F59D195388D20070C39A /* FPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FPAppDelegate.m; sourceTree = "<group>"; };
-		6003F5A5195388D20070C39A /* FPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FPViewController.h; sourceTree = "<group>"; };
-		6003F5A6195388D20070C39A /* FPViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FPViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6003F5AE195388D20070C39A /* FPThemeKit_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FPThemeKit_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -61,10 +69,25 @@
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		66A989B838A898A9CFEB40E9 /* Pods-FPThemeKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FPThemeKit_Tests.debug.xcconfig"; path = "Target Support Files/Pods-FPThemeKit_Tests/Pods-FPThemeKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A2BAF9F453E405AFEEFCD804 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		B851AA78613CB66B018E5497 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		C238C05795F90D5C0033FF80 /* FPThemeKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = FPThemeKit.podspec; path = ../FPThemeKit.podspec; sourceTree = "<group>"; };
+		84919F652E02B96D0086C5B3 /* FPThemeKit_Example-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FPThemeKit_Example-Bridging-Header.h"; sourceTree = "<group>"; };
+		84919F682E02B9B50086C5B3 /* TestVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestVC.h; sourceTree = "<group>"; };
+		84919F692E02B9B50086C5B3 /* TestVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestVC.m; sourceTree = "<group>"; };
+		84919F6A2E02B9B50086C5B3 /* GMViewControllerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GMViewControllerTest.swift; sourceTree = "<group>"; };
+		84919F6B2E02B9B50086C5B3 /* GMViewControllerTest.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GMViewControllerTest.xib; sourceTree = "<group>"; };
+		84919F6C2E02B9B50086C5B3 /* TestVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TestVC.xib; sourceTree = "<group>"; };
+		84919F6D2E02B9B50086C5B3 /* TableCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableCell.h; sourceTree = "<group>"; };
+		84919F6E2E02B9B50086C5B3 /* TableCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableCell.m; sourceTree = "<group>"; };
+		84919F6F2E02B9B50086C5B3 /* TableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableCell.xib; sourceTree = "<group>"; };
+		84919F702E02B9B50086C5B3 /* GMColorTable.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = GMColorTable.txt; sourceTree = "<group>"; };
+		84919F712E02B9B50086C5B3 /* GMAlphaTable.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = GMAlphaTable.txt; sourceTree = "<group>"; };
+		84919F722E02B9B50086C5B3 /* GMImageTable.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = GMImageTable.txt; sourceTree = "<group>"; };
+		84919F732E02B9B50086C5B3 /* Configure.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Configure.plist; sourceTree = "<group>"; };
+		84919F7E2E02BA610086C5B3 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "../../../../../Downloads/fanpengfp-glocalme-GMThemeKit-/Example/GMThemeKit/Base.lproj/Main.storyboard"; sourceTree = "<group>"; };
+		84919F7F2E02BA610086C5B3 /* GMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = GMViewController.h; path = "../../../../../Downloads/fanpengfp-glocalme-GMThemeKit-/Example/GMThemeKit/GMViewController.h"; sourceTree = "<group>"; };
+		84919F802E02BA610086C5B3 /* GMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = GMViewController.m; path = "../../../../../Downloads/fanpengfp-glocalme-GMThemeKit-/Example/GMThemeKit/GMViewController.m"; sourceTree = "<group>"; };
+		A2BAF9F453E405AFEEFCD804 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		B851AA78613CB66B018E5497 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		C238C05795F90D5C0033FF80 /* FPThemeKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = FPThemeKit.podspec; path = ../FPThemeKit.podspec; sourceTree = "<group>"; };
 		C788AD613BD17427A4722D06 /* Pods-FPThemeKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FPThemeKit_Tests.release.xcconfig"; path = "Target Support Files/Pods-FPThemeKit_Tests/Pods-FPThemeKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		DCDFA10DCA7094CC3EFE4B5B /* Pods-FPThemeKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FPThemeKit_Example.release.xcconfig"; path = "Target Support Files/Pods-FPThemeKit_Example/Pods-FPThemeKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,12 +157,25 @@
 			children = (
 				6003F59C195388D20070C39A /* FPAppDelegate.h */,
 				6003F59D195388D20070C39A /* FPAppDelegate.m */,
-				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
-				6003F5A5195388D20070C39A /* FPViewController.h */,
-				6003F5A6195388D20070C39A /* FPViewController.m */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
+				84919F7E2E02BA610086C5B3 /* Main.storyboard */,
+				84919F7F2E02BA610086C5B3 /* GMViewController.h */,
+				84919F802E02BA610086C5B3 /* GMViewController.m */,
+				84919F682E02B9B50086C5B3 /* TestVC.h */,
+				84919F692E02B9B50086C5B3 /* TestVC.m */,
+				84919F6A2E02B9B50086C5B3 /* GMViewControllerTest.swift */,
+				84919F6B2E02B9B50086C5B3 /* GMViewControllerTest.xib */,
+				84919F6C2E02B9B50086C5B3 /* TestVC.xib */,
+				84919F6D2E02B9B50086C5B3 /* TableCell.h */,
+				84919F6E2E02B9B50086C5B3 /* TableCell.m */,
+				84919F6F2E02B9B50086C5B3 /* TableCell.xib */,
+				84919F702E02B9B50086C5B3 /* GMColorTable.txt */,
+				84919F712E02B9B50086C5B3 /* GMAlphaTable.txt */,
+				84919F722E02B9B50086C5B3 /* GMImageTable.txt */,
+				84919F732E02B9B50086C5B3 /* Configure.plist */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
+				84919F652E02B96D0086C5B3 /* FPThemeKit_Example-Bridging-Header.h */,
 			);
 			name = "Example for FPThemeKit";
 			path = FPThemeKit;
@@ -193,7 +229,6 @@
 				66A989B838A898A9CFEB40E9 /* Pods-FPThemeKit_Tests.debug.xcconfig */,
 				C788AD613BD17427A4722D06 /* Pods-FPThemeKit_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -249,6 +284,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = fanpeng;
 				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						LastSwiftMigration = 1620;
+					};
 					6003F5AD195388D20070C39A = {
 						TestTargetID = 6003F589195388D20070C39A;
 					};
@@ -259,6 +297,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -278,10 +317,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				84919F772E02B9B50086C5B3 /* GMAlphaTable.txt in Resources */,
+				84919F782E02B9B50086C5B3 /* GMColorTable.txt in Resources */,
+				84919F822E02BA610086C5B3 /* Main.storyboard in Resources */,
+				84919F792E02B9B50086C5B3 /* GMViewControllerTest.xib in Resources */,
+				84919F7A2E02B9B50086C5B3 /* GMImageTable.txt in Resources */,
+				84919F7B2E02B9B50086C5B3 /* TableCell.xib in Resources */,
+				84919F7C2E02B9B50086C5B3 /* Configure.plist in Resources */,
+				84919F7D2E02B9B50086C5B3 /* TestVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,7 +430,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6003F59E195388D20070C39A /* FPAppDelegate.m in Sources */,
-				6003F5A7195388D20070C39A /* FPViewController.m in Sources */,
+				84919F742E02B9B50086C5B3 /* TableCell.m in Sources */,
+				84919F752E02B9B50086C5B3 /* GMViewControllerTest.swift in Sources */,
+				84919F762E02B9B50086C5B3 /* TestVC.m in Sources */,
+				84919F812E02BA610086C5B3 /* GMViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -513,12 +562,15 @@
 			baseConfigurationReference = 12B2CB759EE9FDFEE67E26E4 /* Pods-FPThemeKit_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FPThemeKit/FPThemeKit-Prefix.pch";
 				INFOPLIST_FILE = "FPThemeKit/FPThemeKit-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FPThemeKit/FPThemeKit_Example-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;
 			};
@@ -529,12 +581,14 @@
 			baseConfigurationReference = DCDFA10DCA7094CC3EFE4B5B /* Pods-FPThemeKit_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FPThemeKit/FPThemeKit-Prefix.pch";
 				INFOPLIST_FILE = "FPThemeKit/FPThemeKit-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "FPThemeKit/FPThemeKit_Example-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				WRAPPER_EXTENSION = app;
 			};

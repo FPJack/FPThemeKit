@@ -8,7 +8,7 @@
 
 #import "FPThemeManager.h"
 #import "FPThemeProxy.h"
-#define kGMThemeKitKey @"kGMThemeKitKey"
+#define kFPThemeKitKey @"kFPThemeKitKey"
 
 
 NSString * const kThemeKitWillChangeNotification = @"kThemeKitWillChangeNotification";
@@ -53,9 +53,9 @@ NSString * const kThemeKitNight = @"NIGHT";
 - (void)setCurrentTheme:(NSString *)currentTheme {
     if ([currentTheme isEqualToString:_currentTheme]) return;
     _currentTheme = currentTheme;
-    [NSUserDefaults.standardUserDefaults setValue:currentTheme forKey:kGMThemeKitKey];
+    [NSUserDefaults.standardUserDefaults setValue:currentTheme forKey:kFPThemeKitKey];
     [NSUserDefaults.standardUserDefaults synchronize];
-    NSString *theme = [NSUserDefaults.standardUserDefaults valueForKey:kGMThemeKitKey];
+    NSString *theme = [NSUserDefaults.standardUserDefaults valueForKey:kFPThemeKitKey];
 #if DEBUG
     NSLog(@"设置当前主题---%@",theme);
 #endif
@@ -139,7 +139,7 @@ NSString * const kThemeKitNight = @"NIGHT";
 }
 
 - (void)reload {
-    NSString *theme = [NSUserDefaults.standardUserDefaults valueForKey:kGMThemeKitKey];
+    NSString *theme = [NSUserDefaults.standardUserDefaults valueForKey:kFPThemeKitKey];
 #if DEBUG
     NSLog(@"加载当前主题---%@",theme);
 #endif
@@ -152,7 +152,7 @@ NSString * const kThemeKitNight = @"NIGHT";
 }
 - (NSString *)currentTheme {
     if (!_currentTheme) {
-        NSString *theme = [NSUserDefaults.standardUserDefaults valueForKey:kGMThemeKitKey];
+        NSString *theme = [NSUserDefaults.standardUserDefaults valueForKey:kFPThemeKitKey];
         _currentTheme = theme ? theme : self.colorTable.themes.firstObject;
     }
     return _currentTheme;
