@@ -147,7 +147,7 @@ static const void *MyThemeKitId = &MyThemeKitId;
     [dic enumerateKeysAndObjectsUsingBlock:^(NSString*  _Nonnull key, NSObject*  _Nonnull obj, BOOL * _Nonnull stop) {
         if ([key isEqualToString:kBlockskey]) {
             NSArray *arr = (NSArray *)obj;
-            [arr enumerateObjectsUsingBlock:^(GMThemeBlock obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [arr enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(GMThemeBlock   obj, NSUInteger idx, BOOL * _Nonnull stop) {
                 if (obj) {
                     obj(view, FPThemeManager.share.currentTheme);
                 }
