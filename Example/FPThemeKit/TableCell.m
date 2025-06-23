@@ -8,7 +8,7 @@
 
 #import "TableCell.h"
 #import <FPThemeKit/FPThemeKit.h>
-
+#import <FPThemeKit/IGMTheme.h>
 @implementation TableCell
 
 - (void)awakeFromNib {
@@ -33,6 +33,58 @@
 //    [invocation setArgument:&state atIndex:3];
 //    [invocation invoke];
 //    return;
+    
+    [self themeKit:^(UIView * _Nullable v, NSString * _Nullable theme) {
+        TableCell *view = (TableCell *)v;
+        view.switch1.onTintColor = kColorWithKey(@"SEP");
+        NSString *text = @"这是富文本红色文字，这是蓝色文字";
+        NSMutableAttributedString *attrStr = [[NSMutableAttributedString alloc] initWithString:text];
+        [attrStr addAttribute:NSForegroundColorAttributeName
+                       value: kColorWithKey(@"RICH")
+                       range:NSMakeRange(2, 4)]; // "红色文字"
+        [attrStr addAttribute:NSForegroundColorAttributeName
+                       value: kColorWithKey(@"BAR")
+                       range:NSMakeRange(9, 4)]; // "蓝色文字"
+        view.textField.attributedText = attrStr;
+        
+       
+        
+    //
+        view.slider.thumbTintColor = kColorWithKey(@"TEXT");
+        view.slider.maximumTrackTintColor = kColorWithKey(@"SEP");
+        //
+        view.slider.minimumTrackTintColor = kColorWithKey(@"BAR");
+        //
+        
+        view.progress.progressTintColor = kColorWithKey(@"SEP");
+        //
+        view.progress.trackTintColor = kColorWithKey(@"BAR");
+
+        view.pagecontroll.currentPageIndicatorTintColor = kColorWithKey(@"BAR");
+        view.pagecontroll.pageIndicatorTintColor = kColorWithKey(@"BAR");
+        [view.pagecontroll setCurrentPageIndicatorImage:kImageWithKey(@"image1") forPage:0];
+        [view.pagecontroll setIndicatorImage:kImageWithKey(@"image1") forPage:0];
+        [view.pagecontroll setIndicatorImage:kImageWithKey(@"image2") forPage:1];
+        [view.pagecontroll setIndicatorImage:kImageWithKey(@"image3") forPage:2];
+
+        view.button.backgroundColor =  kColorWithKey(@"BAR");
+        [view.button setTitleColor: kColorWithKey(@"TEXT") forState:UIControlStateNormal];
+    ////
+        [view.button setImage:kImageWithKey(@"image1")  forState:UIControlStateNormal];
+        [view.button setImage:kImageWithKey(@"image2")  forState:UIControlStateSelected];
+    //
+    //    self.textField.themeKit.textColor = GMColorPickerWithKey(TEXT);
+    //    self.label.themeKit.textColor = GMColorPickerWithKey(TEXT);
+        view.label.textColor = kColorWithKey(@"TEXT");
+      
+        
+    //
+    //    self.alphaView.themeKit.alpha = [GMThemeProxy alphaWithKey:@"alpha1"];
+        view.alphaView.alpha = kAlphaWithKey(@"alpha1").floatValue;
+        view.layer.borderColor = kColorWithKey(@"RICH").CGColor;
+        view.layer.borderWidth = 2;
+    }];
+    return;
     self.switch1.themeKit.onTintColor = kColorWithKey(@"SEP");
     self.textField.themeKit.attributedText = ^NSAttributedString * _Nullable(NSString * _Nullable theme) {
         NSString *text = @"这是富文本红色文字，这是蓝色文字";
@@ -75,6 +127,8 @@
 //    self.textField.themeKit.textColor = GMColorPickerWithKey(TEXT);
 //    self.label.themeKit.textColor = GMColorPickerWithKey(TEXT);
     self.label.themeKit.textColor = kColorWithKey(@"TEXT");
+  
+    
 //
 //    self.alphaView.themeKit.alpha = [GMThemeProxy alphaWithKey:@"alpha1"];
     self.alphaView.themeKit.alpha = kAlphaWithKey(@"alpha1");
@@ -108,7 +162,15 @@
 }
 
 - (IBAction)buttonAction:(UIButton *)sender {
-    sender.selected = !sender.selected;
+    
+    [sender themeKit:^(UIButton * _Nonnull view, NSString * _Nonnull theme) {
+        NSLog(@"%@",view);
+    }];
+   
+}
+- (void)dealloc
+{
+    NSLog(@"dealloc %@", NSStringFromClass(self.class));
 }
 
 @end

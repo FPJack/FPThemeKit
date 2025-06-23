@@ -13,6 +13,16 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    NSMapTable *mapTable = [NSMapTable weakToStrongObjectsMapTable];
+    NSObject *key = [[NSObject alloc] init];
+    NSObject *value = [[NSObject alloc] init];
+    [mapTable setObject:value forKey:key];
+    NSLog(@"键对应的值: %@", [mapTable objectForKey:key]); // 输出: 键对应的值: (null)
+
+    // 当键对象被释放（例如设置为 nil 且没有其他引用）,
+    // 该条目会自动从 mapTable 中移除。
+    key = nil;
+    NSLog(@"键对应的值: %@", [mapTable objectForKey:key]); // 输出: 键对应的值: (null)
     return YES;
 }
 

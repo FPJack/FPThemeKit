@@ -9,13 +9,14 @@
 #import <objc/message.h>
 #import "FPThemeManager.h"
 static NSHashTable *cache;
+
 #define kCGColorTag 1
 #define kAlphaTag 2
 #define kImageTag 3
 #define kColorTag 4
 #define kAppearanceTag 5
 #define kBlockPicker 6
-
+#define kBlockskey @"GMThemeKitBlocks"
 
 @interface GMPickerObj : NSObject
 @property (nonatomic,copy)GMBlockPicker blockPicker;
@@ -40,6 +41,17 @@ static NSHashTable *cache;
 @implementation NSObject (GMTheme)
 - (id<IGMThemeView>)themeKit {
     return (id<IGMThemeView>)[FPThemeProxy wrapView:self];
+}
+- (void)themeKit:(GMThemeBlock)block {
+    if (!block) return;
+    block(self, FPThemeManager.share.currentTheme);
+    NSMutableArray *arr = self._themeDic[kBlockskey];
+    if (!arr) {
+        arr = [NSMutableArray array];
+        self._themeDic[kBlockskey] = arr;
+    }
+    [arr addObject:block];
+    [cache addObject:self];
 }
 static const void *MyDictionaryKey = &MyDictionaryKey;
 - (void)_setThemeMap:(NSMutableDictionary *)dic {
@@ -89,6 +101,7 @@ static const void *MyThemeKitId = &MyThemeKitId;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         cache = [NSHashTable weakObjectsHashTable];
+
     });
 }
 + (instancetype)wrapView:(NSObject *)view {
@@ -125,63 +138,75 @@ static const void *MyThemeKitId = &MyThemeKitId;
 #if DEBUG
     NSLog(@"主题切换view的个数:%ld---用时:%f秒",idx,end-start);
 #endif
+
 }
 
 + (void)changeThemeWithObj:(NSObject*)view {
     [self changeKeyboardAppearce:view];
     NSDictionary *dic =  [view _themeDic];
-    [dic enumerateKeysAndObjectsUsingBlock:^(NSString*  _Nonnull key, GMPickerObj*  _Nonnull pickerObj, BOOL * _Nonnull stop) {
-        NSInvocation *invocation = pickerObj.invocation;
-        int tag = pickerObj.tag;
-        if (tag == kAlphaTag) {
-             NSNumber *alpha = [FPThemeProxy alphaWithKey:pickerObj.themeId];
-            CGFloat alphaValue = alpha.floatValue;
-            [invocation setArgument:&alphaValue atIndex:2];
-            [invocation invoke];
-        }else if (tag == kCGColorTag){
-            UIColor *color = [FPThemeProxy colorWithKey:pickerObj.themeId];
-            CGColorRef cgColor = color.CGColor;
-            [invocation setArgument:&cgColor atIndex:2];
-            [invocation invoke];
-        }else if (tag == kBlockPicker) {
-            GMBlockPicker block = pickerObj.blockPicker;
-            if (block) {
-                id blockReturnValue = block(FPThemeManager.share.currentTheme);
-                [invocation setArgument:&blockReturnValue atIndex:2];
+    [dic enumerateKeysAndObjectsUsingBlock:^(NSString*  _Nonnull key, NSObject*  _Nonnull obj, BOOL * _Nonnull stop) {
+        if ([key isEqualToString:kBlockskey]) {
+            NSArray *arr = (NSArray *)obj;
+            [arr enumerateObjectsUsingBlock:^(GMThemeBlock obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                if (obj) {
+                    obj(view, FPThemeManager.share.currentTheme);
+                }
+            }];
+        }else {
+            GMPickerObj* pickerObj = (GMPickerObj *)obj;
+            NSInvocation *invocation = pickerObj.invocation;
+            int tag = pickerObj.tag;
+            if (tag == kAlphaTag) {
+                 NSNumber *alpha = [FPThemeProxy alphaWithKey:pickerObj.themeId];
+                CGFloat alphaValue = alpha.floatValue;
+                [invocation setArgument:&alphaValue atIndex:2];
                 [invocation invoke];
-            }else {
-                id blockReturnValue;
-                [invocation setArgument:&blockReturnValue atIndex:2];
+            }else if (tag == kCGColorTag){
+                UIColor *color = [FPThemeProxy colorWithKey:pickerObj.themeId];
+                CGColorRef cgColor = color.CGColor;
+                [invocation setArgument:&cgColor atIndex:2];
                 [invocation invoke];
-            }
-        }else if (tag == kAppearanceTag) {
-            if (@available(iOS 13.0, *)) {
+            }else if (tag == kBlockPicker) {
                 GMBlockPicker block = pickerObj.blockPicker;
                 if (block) {
-                    UINavigationBarAppearance *appearance = block(FPThemeManager.share.currentTheme);
-                    [invocation setArgument:&appearance atIndex:2];
+                    id blockReturnValue = block(FPThemeManager.share.currentTheme);
+                    [invocation setArgument:&blockReturnValue atIndex:2];
                     [invocation invoke];
                 }else {
-                    UINavigationBarAppearance *appearance;
-                    [invocation setArgument:&appearance atIndex:2];
+                    id blockReturnValue;
+                    [invocation setArgument:&blockReturnValue atIndex:2];
                     [invocation invoke];
                 }
+            }else if (tag == kAppearanceTag) {
+                if (@available(iOS 13.0, *)) {
+                    GMBlockPicker block = pickerObj.blockPicker;
+                    if (block) {
+                        UINavigationBarAppearance *appearance = block(FPThemeManager.share.currentTheme);
+                        [invocation setArgument:&appearance atIndex:2];
+                        [invocation invoke];
+                    }else {
+                        UINavigationBarAppearance *appearance;
+                        [invocation setArgument:&appearance atIndex:2];
+                        [invocation invoke];
+                    }
+                } else {
+                    // Fallback on earlier versions
+                }
             } else {
-                // Fallback on earlier versions
-            }
-        } else {
-            NSString *themeKitId = pickerObj.themeId;
-            if (tag == kColorTag) {
-                 UIColor* argument = [FPThemeProxy colorWithKey:themeKitId];
-                [invocation setArgument:&argument atIndex:2];
-                [invocation invoke];
-            }else if (tag == kImageTag) {
-                UIImage* argument = [FPThemeProxy imageWithKey:themeKitId];
-                [invocation setArgument:&argument atIndex:2];
-                //括号外部调用有可能导致Image释放了导致坏内存崩溃
-                [invocation invoke];
+                NSString *themeKitId = pickerObj.themeId;
+                if (tag == kColorTag) {
+                     UIColor* argument = [FPThemeProxy colorWithKey:themeKitId];
+                    [invocation setArgument:&argument atIndex:2];
+                    [invocation invoke];
+                }else if (tag == kImageTag) {
+                    UIImage* argument = [FPThemeProxy imageWithKey:themeKitId];
+                    [invocation setArgument:&argument atIndex:2];
+                    //括号外部调用有可能导致Image释放了导致坏内存崩溃
+                    [invocation invoke];
+                }
             }
         }
+       
     }];
 }
 + (void)changeKeyboardAppearce:(NSObject *)view {
