@@ -44,7 +44,7 @@ static NSHashTable *cache;
 }
 - (void)themeKit:(GMThemeBlock)block {
     if (!block) return;
-    block(self, FPThemeManager.share.currentTheme);
+    block(self);
     NSMutableArray *arr = self._themeDic[kBlockskey];
     if (!arr) {
         arr = [NSMutableArray array];
@@ -148,7 +148,7 @@ static const void *MyThemeKitId = &MyThemeKitId;
             NSArray *arr = (NSArray *)obj;
             [arr enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(GMThemeBlock   obj, NSUInteger idx, BOOL * _Nonnull stop) {
                 if (obj) {
-                    obj(view, FPThemeManager.share.currentTheme);
+                    obj(view);
                 }
             }];
         }else {

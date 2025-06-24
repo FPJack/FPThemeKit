@@ -34,7 +34,7 @@
 //    [invocation invoke];
 //    return;
     
-    [self themeKit:^(UIView * _Nullable v, NSString * _Nullable theme) {
+    [self themeKit:^(UIView *  v) {
         TableCell *view = (TableCell *)v;
         view.switch1.onTintColor = kColorWithKey(@"SEP");
         NSString *text = @"这是富文本红色文字，这是蓝色文字";
@@ -84,9 +84,7 @@
         view.layer.borderColor = kColorWithKey(@"RICH").CGColor;
         view.layer.borderWidth = 2;
         
-        [view themeKit:^(UIView * _Nullable v, NSString * _Nullable theme) {
-            NSLog(@"%@",v);
-        }];
+       
     }];
     return;
     self.switch1.themeKit.onTintColor = kColorWithKey(@"SEP");
@@ -132,9 +130,7 @@
 //    self.label.themeKit.textColor = GMColorPickerWithKey(TEXT);
     self.label.themeKit.textColor = kColorWithKey(@"TEXT");
   
-    [self.label themeKit:^(UILabel * _Nonnull label, NSString * _Nonnull theme) {
-        label.textColor = kColorWithKey(@"TEXT");
-    }];
+   
    
 //
 //    self.alphaView.themeKit.alpha = [GMThemeProxy alphaWithKey:@"alpha1"];
@@ -170,9 +166,7 @@
 
 - (IBAction)buttonAction:(UIButton *)sender {
     
-    [sender themeKit:^(UIButton * _Nonnull view, NSString * _Nonnull theme) {
-        NSLog(@"%@",view);
-    }];
+  
    
 }
 - (void)dealloc

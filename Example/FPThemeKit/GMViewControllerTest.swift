@@ -14,6 +14,7 @@ import FPThemeKit
     @IBOutlet weak var label: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+       
         self.view.themeKit().backgroundColor = kColorWithKey("BAR")
         self.navigationController?.navigationBar.themeKit().tintColor = kColorWithKey("TINT")
         label.themeKit().textColor = kColorWithKey("TEXT")
