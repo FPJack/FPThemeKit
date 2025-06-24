@@ -22,7 +22,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 @interface UIView()
-- (void)themeKit:(void (^)(UIView * _Nullable view, NSString * _Nullable theme))block;
+- (void)themeKit:(void (^)(UIView *  view, NSString * theme))block;
 - (id<IGMThemeView>)themeKit;
 @end
 
@@ -117,9 +117,9 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol IGMThemePageControl<IGMThemeView>
 @property(nullable, nonatomic,copy)UIColor* pageIndicatorTintColor;
 @property(nullable, nonatomic,copy)UIColor* currentPageIndicatorTintColor;
-@property(nullable, nonatomic,strong)UIImage* preferredIndicatorImage;
-- (void)setCurrentPageIndicatorImage:(UIImage* )image forPage:(NSInteger)page;
-- (void)setIndicatorImage:(UIImage* )image forPage:(NSInteger)page;
+@property(nullable, nonatomic,strong)UIImage* preferredIndicatorImage API_AVAILABLE(ios(16.0));
+- (void)setCurrentPageIndicatorImage:(UIImage* )image forPage:(NSInteger)page API_AVAILABLE(ios(16.0));
+- (void)setIndicatorImage:(UIImage* )image forPage:(NSInteger)page API_AVAILABLE(ios(14.0));
 @end
 @interface UIPageControl()
 - (id<IGMThemePageControl>)themeKit;
@@ -191,6 +191,9 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)themeKit:(void (^)(UITableView *  tableView, NSString *  theme))block;
 @end
 
+@interface UITableViewCell()
+- (void)themeKit:(void (^)(UITableViewCell *  cell, NSString *  theme))block;
+@end
 
 @protocol IGMThemeToolbar<IGMThemeView>
 @property(nullable, nonatomic,copy)UIColor* barTintColor;

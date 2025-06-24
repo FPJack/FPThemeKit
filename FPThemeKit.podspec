@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'FPThemeKit'
-  s.version          = '0.1.3'
+  s.version          = '0.1.4'
   s.summary          = 'A short description of FPThemeKit.'
 
 # This description is used to generate tags and improve search results.
@@ -29,12 +29,12 @@ TODO: Add long description of the pod here.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '10.0'
-   s.pod_target_xcconfig = {
-       'VALID_ARCHS' => 'arm64 arm64e x86_64',
-       'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
-     }
-     
-     s.user_target_xcconfig = {
+#   s.pod_target_xcconfig = {
+#       'VALID_ARCHS' => 'arm64 arm64e x86_64',
+#       'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
+#   }
+#     
+  s.user_target_xcconfig = {
        'VALID_ARCHS' => 'arm64 arm64e x86_64',
        'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
      }

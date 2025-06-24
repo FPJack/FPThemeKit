@@ -134,7 +134,6 @@
   
     [self.label themeKit:^(UILabel * _Nonnull label, NSString * _Nonnull theme) {
         label.textColor = kColorWithKey(@"TEXT");
-
     }];
    
 //

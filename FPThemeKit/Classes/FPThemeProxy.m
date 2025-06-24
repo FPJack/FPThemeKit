@@ -101,7 +101,6 @@ static const void *MyThemeKitId = &MyThemeKitId;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         cache = [NSHashTable weakObjectsHashTable];
-
     });
 }
 + (instancetype)wrapView:(NSObject *)view {
