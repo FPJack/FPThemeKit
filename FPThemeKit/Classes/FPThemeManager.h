@@ -60,6 +60,8 @@ typedef NSDictionary<NSString *,NSDictionary<NSString*,NSDictionary<NSString*,id
 - (void)loadFromDictionaryInfo:(GMThemeSourceType *)themeSource;
 
 - (void)updateTheme:(NSString *)theme;
+/// 刷新UI
+- (void)refresh;
 
 + (UIColor *)colorWithKey:(NSString *)key;
 + (UIImage *)imageWithKey:(NSString *)key;

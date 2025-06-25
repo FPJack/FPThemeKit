@@ -90,6 +90,10 @@ NSString * const kThemeKitNight = @"NIGHT";
     }
     [self reload];
 }
+- (void)refresh {
+    [NSNotificationCenter.defaultCenter postNotificationName:kThemeKitWillChangeNotification object:self.currentTheme];
+    [FPThemeProxy performSelector:@selector(changeTheme:) withObject:self.currentTheme];
+}
 - (void)loadFromDictionaryInfo:(GMThemeSourceType *)themeSource {
     if (![themeSource isKindOfClass:NSDictionary.class]) return;
     self.themes = themeSource.allKeys;
