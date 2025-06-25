@@ -55,6 +55,9 @@ typedef NSDictionary<NSString *,NSDictionary<NSString*,NSDictionary<NSString*,id
                 imageFilePath:(NSString * _Nullable)imagePath
                 alphaFilePath:(NSString * _Nullable)alphaPath;
 
+- (void)loadColorFilePath:(NSString * _Nullable)colorFilePath;
+- (void)loadImageFilePath:(NSString * _Nullable)imageFilePath;
+- (void)loadAlphaFilePath:(NSString * _Nullable)alphaFilePath;
 /// 通过info.plist文件字典加载
 /// - Parameter themeSource: <#themeSource description#>
 - (void)loadFromDictionaryInfo:(GMThemeSourceType *)themeSource;

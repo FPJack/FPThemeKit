@@ -34,7 +34,7 @@
 //    [invocation invoke];
 //    return;
     
-    [self themeKit:^(UIView *  v) {
+    [self themeKit:^(UITableViewCell *  v) {
         TableCell *view = (TableCell *)v;
         view.switch1.onTintColor = kColorWithKey(@"SEP");
         NSString *text = @"这是富文本红色文字，这是蓝色文字";

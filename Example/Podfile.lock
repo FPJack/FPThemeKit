@@ -4,7 +4,7 @@ PODS:
   - FBSnapshotTestCase/Core (2.1.4)
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
-  - FPThemeKit (0.1.5)
+  - FPThemeKit (0.1.7)
 
 DEPENDENCIES:
   - FBSnapshotTestCase
@@ -20,7 +20,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
-  FPThemeKit: 04527a08164327f2313efdc761786ea141eb4ffe
+  FPThemeKit: e48af496baa5c436422991b2ff75bf13f8ee3e83
 
 PODFILE CHECKSUM: 86320c300cae09af24414e3af0fb18eec8b30908
 

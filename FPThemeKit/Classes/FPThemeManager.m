@@ -64,30 +64,35 @@ NSString * const kThemeKitNight = @"NIGHT";
 }
 
 - (void)loadFromColorFilePath:(NSString *)colorPath imageFilePath:(NSString *)imagePath alphaFilePath:(NSString *)alphaPath{
-    {
-        NSArray *array = [self parseTextToWordArray:colorPath];
-        GMTableObj *table = [self getTable:array valueConvert:^id (NSString *key,NSString *value) {
-            return value;
-        }];
-        self.colorTable = table;
-        self.themes = [array.firstObject copy];
-    }
-    {
-        NSArray *array = [self parseTextToWordArray:imagePath];
-        GMTableObj *table = [self getTable:array valueConvert:^NSString * (NSString *key,NSString *value) {
-            return value;
-        }];
-        self.imageTable = table;
-    }
-    {
-        NSArray *array = [self parseTextToWordArray:alphaPath];
-        GMTableObj *table = [self getTable:array valueConvert:^NSNumber * (NSString *key,NSString *value) {
-            NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-            NSNumber *number = [formatter numberFromString:value];
-            return number ? number : @(1.0);
-        }];
-        self.alphaTable = table;
-    }
+    [self loadColorFilePath:colorPath];
+    [self loadImageFilePath:imagePath];
+    [self loadAlphaFilePath:alphaPath];
+}
+- (void)loadColorFilePath:(NSString * _Nullable)colorFilePath{
+    NSArray *array = [self parseTextToWordArray:colorFilePath];
+    GMTableObj *table = [self getTable:array valueConvert:^id (NSString *key,NSString *value) {
+        return value;
+    }];
+    self.colorTable = table;
+    self.themes = [array.firstObject copy];
+    [self reload];
+}
+- (void)loadImageFilePath:(NSString * _Nullable)imageFilePath{
+    NSArray *array = [self parseTextToWordArray:imageFilePath];
+    GMTableObj *table = [self getTable:array valueConvert:^NSString * (NSString *key,NSString *value) {
+        return value;
+    }];
+    self.imageTable = table;
+    [self reload];
+}
+- (void)loadAlphaFilePath:(NSString * _Nullable)alphaFilePath{
+    NSArray *array = [self parseTextToWordArray:alphaFilePath];
+    GMTableObj *table = [self getTable:array valueConvert:^NSNumber * (NSString *key,NSString *value) {
+        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+        NSNumber *number = [formatter numberFromString:value];
+        return number ? number : @(1.0);
+    }];
+    self.alphaTable = table;
     [self reload];
 }
 - (void)refresh {
